@@ -1,0 +1,19 @@
+extends layout
+
+
+block content
+
+	h1 REGISTER HERE!!
+
+	form(method='POST', action='/signup/register')
+		#form-group
+			label Name:
+			input.form-control(name='name',type='text')
+		#form-group
+			label Email:
+			input.form-control(name='email',type='text')
+		#form-group
+			label Contacts:
+			input.form-control(name='contacts',type='text')
+
+		input.btn.btn-primary(type='submit', value="SUBMIT")
