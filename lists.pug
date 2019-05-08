@@ -1,0 +1,7 @@
+extends layout
+
+block content 
+		h1 LISTS OF THE REGISTERED MEMBERS OF KUYRCC
+
+		each user, i in users
+			li= user.name
