@@ -1,0 +1,93 @@
+extends layout
+
+block content
+  // Header Image
+  div.container
+    img.img-fluid.pt-4(src='KUYRCC.png', alt='KUYRCC logo')
+  // Navigation
+  nav.container.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
+    div.container-fluid
+      a.navbar-brand(href='#')
+        img.img-fluid(src='kuyrccText.png')
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive')
+        span.navbar-toggler-icon
+      #navbarResponsive.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='#')  Homme 
+          li.nav-item
+            a.nav-link(href='#')  Service 
+          li.nav-item
+            a.nav-link(href='#')  About 
+          li.nav-item
+            a.nav-link(href='#')  Contact 
+      button.btn.btn-outline-info.waves-effect.ml-0.float-md-right(type='button',data-toggle="collapse", data-target="#Login") Log In
+      button.btn.btn-outline-info.waves-effect.mr-0.flaot-md-right(type='button',data-toggle="collapse", data-target="#SignUp") Sign Up
+  
+  // -sliding login and signup forms
+  #Login.collapse.container.my-4
+    .container-fluid.padding
+      .row.text-center
+        form.form-inline
+          label(for='email') Email address:
+          input.form-control(type='email')
+          label(for='pwd') Password:
+          input.form-control(type='password')
+          .form-check
+            label.form-check-label
+              input.form-check-input(type='checkbox')
+              |  Remember me
+          button.btn.btn-primary(type='submit') Log In
+  #SignUp.collapse.container.my-4
+    .container-fluid.padding
+      .row.text-center
+        form.form-inline
+          label Name:
+          input(type='text')
+          label(for='email') Email address:
+          input#email.form-control(type='email')
+          label(for='pwd') Password:
+          input#pwd.form-control(type='password')
+          label(for='pwd') Confirm Password:
+          input#pwd.form-control(type='password')
+          button.btn.btn-primary(type='submit') Register
+
+  // - Image Slider
+  #slides.container.carousel.slide(data-ride='carousel')
+    ul.carousel-indicators
+      li.active(data-target='#slides', data-slide-to='0')
+      li(data-target='#slides', data-slide-to='1')
+      li(data-target='#slides', data-slide-to='2')
+    div.carousel-inner
+      div.carousel-item.active
+        img(src='red.jpg')
+      div.carousel-item
+        img(src='red2.jpg')
+      div.carousel-item
+        img(src='red3.jpg')
+    a.carousel-control-prev(href='#slides', data-slide='prev')
+      span.carousel-control-prev-icon
+    a.carousel-control-next(href='#slides', data-slide='next')
+      span.carousel-control-next-icon
+  // - Jumbotron
+  // - Welcome Section
+  div.container
+    p
+      | From they fine john he give of rich he. They age and draw mrs like. Improving end distrusts may instantly was household applauded incommode. Why kept very ever home mrs. Considered sympathize ten uncommonly occasional 
+      |assistance sufficient not. Letter of on become he tended active enable to. Vicinity relation sensible sociable surprise screened no up as.
+      | Arrived compass prepare an on as. Reasonable particular on my it in sympathize. Size now easy eat hand how. Unwilling he departure elsewhere dejection at. Heart large seems may purse means few blind. Exquisite newspaper attending on certainty oh suspicion of. He less do quit evil is. Add matter family active mutual put wishes happen.
+      | View fine me gone this name an rank. Compact greater and demands mrs the parlors. Park be fine easy am size away. Him and fine bred knew. At of hardly sister favour. As society explain country raising weather of. Sentiments nor everything off out uncommonly partiality bed.
+      | In as name to here them deny wise this. As rapid woody my he me which. Men but they fail shew just wish next put. Led all visitor musical calling nor her. Within coming figure sex things are. Pretended concluded did repulsive education smallness yet yet described. Had country man his pressed shewing. No gate dare rose he. Eyes year if miss he as upon.
+      | Inhabit hearing perhaps on ye do no. It maids decay as there he. Smallest on suitable disposed do although blessing he juvenile in. Society or if excited forbade. Here name off yet she long sold easy whom. Differed oh cheerful procured pleasure securing suitable in. Hold rich on an he oh fine. Chapter ability shyness article welcome be do on service.
+      | Inhabiting discretion the her dispatched decisively boisterous joy. So form were wish open is able of mile of. Waiting express if prevent it we an musical. Especially reasonable travelling she son. Resources resembled forfeited no to zealously. Has procured daughter how friendly followed repeated who surprise. Great asked oh under on voice downs. Law together prospect kindness securing six. Learning why get hastened smallest cheerful.
+      | Contented get distrusts certainty nay are frankness concealed ham. On unaffected resolution on considered of. No thought me husband or colonel forming effects. End sitting shewing who saw besides son musical adapted.
+      | Contrasted interested eat alteration pianoforte sympathize was. He families believed if no elegance interest surprise an. It abode wrong miles an so delay plate. She relation own put outlived may disposed.
+  // - Three Column Section
+  // - Two Column Section
+  // - Fixed background
+  // - Emoji Section
+  // - Meet the team
+  // - Cards
+  // - Two Column Section
+  // - Connect
+  // - Footer
