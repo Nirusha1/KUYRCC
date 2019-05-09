@@ -2,18 +2,15 @@ extends layout
 
 
 block content
-
-	h1 REGISTER THERE!!
-	#comment
-	form(method='POST', action='/signup/register')
-		#form-group
-			label Name:
-			input.form-control(name='name',type='text')
-		#form-group
-			label Email:
-			input.form-control(name='email',type='text')
-		#form-group
-			label Contacts:
-			input.form-control(name='contacts',type='text')
-
-		input.btn.btn-primary(type='submit', value="SUBMIT")
+	#SignUp.container.h-100
+		.row.h-100.text-center.justify-content-center.align-items-center
+			form.form-group
+				label Name:
+				input#name.form-control(type='text')
+				label(for='email') Email address:
+				input#email.form-control(type='email')
+				label(for='pwd') Password:
+				input#pwd.form-control(type='password')
+				label(for='pwd') Confirm Password:
+				input#pwd.form-control(type='password')
+				button.btn.btn-primary.mt-3(type='submit') Register

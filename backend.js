@@ -4,6 +4,8 @@ const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
 
 
+
+
 mongoose.connect('mongodb://localhost:27017/KUYRCCdb');
 let db = mongoose.connection;
 
@@ -21,8 +23,7 @@ db.on('error', function(err){
 
 //init backend
 const backend=express();
-
-
+backend.use(express.static('img'));
 
 //Bring in models
 let dbvariable = require('./models/users');
@@ -40,23 +41,22 @@ backend.use(bodyParser.json())
 
 //home route
 backend.get('/', function(req, res){
-	
 				res.render('index',{
 				title:'KUYRCC'
-	
-
 	});
-			
+});
+//FrontEnd page route
+backend.get('/frontend', function(req, res){
+				res.render('frontend',{
+					title:'FrontEnd'
+	});
 });
 
-
 //add route
-backend.get('/signup/register', function(req, res){
+backend.get('/KUYRCC/SignUP/', function(req, res){
 	res.render('register',{
 		title:'Register'
-
 	});
-
 });
 
 //for checking if users are registered in database or not route
@@ -71,7 +71,7 @@ backend.get('/signup/lists', function(req, res){
 			});
 		}
 	});
-		
+
 });
 
 //add registration route
@@ -95,8 +95,6 @@ backend.post('/signup/register', function(req, res){
 
 	return;
 });
-
-
 
 
 //to start server
