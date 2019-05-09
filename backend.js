@@ -3,12 +3,8 @@ const path=require('path');
 const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
 
-
-
-
 mongoose.connect('mongodb://localhost:27017/KUYRCCdb');
 let db = mongoose.connection;
-
 
 //check db connection
 db.once('open', function(){
@@ -18,11 +14,11 @@ db.once('open', function(){
 //check for db errors
 db.on('error', function(err){
 	console.log(err);
-
 });
 
 //init backend
 const backend=express();
+//defining path to img folder
 backend.use(express.static('img'));
 
 //Bring in models
@@ -71,16 +67,15 @@ backend.get('/signup/lists', function(req, res){
 			});
 		}
 	});
-
 });
 
 //add registration route
-backend.post('/signup/register', function(req, res){
+backend.post('/KUYRCC/SignUP/', function(req, res){
 	console.log('submitted');
 	let x= new dbvariable();
 	x.name=req.body.name;
 	x.email=req.body.email;
-	x.contacts=req.body.contacts;
+	x.password=req.body.password;
 	console.log(req.body.name);
 
 	x.save(function(err){
@@ -92,10 +87,8 @@ backend.post('/signup/register', function(req, res){
 			res.redirect('/');
 		}
 	});
-
 	return;
 });
-
 
 //to start server
 backend.listen(3000,function(){
