@@ -1,6 +1,5 @@
 extends layout
 
-
 block content
 
 	h1 REGISTER HERE!!
@@ -11,9 +10,10 @@ block content
 			input.form-control(name='name',type='text')
 		#form-group
 			label Email:
-			input.form-control(name='email',type='text')
+			input.form-control(name='email',type='email')
 		#form-group
-			label Contacts:
-			input.form-control(name='contacts',type='text')
+			label password:
+			input.form-control(name='pwd',type='password')
+
 
 		input.btn.btn-primary(type='submit', value="SUBMIT")

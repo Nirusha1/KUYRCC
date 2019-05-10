@@ -22,6 +22,9 @@ db.on('error', function(err){
 //init backend
 const backend=express();
 
+//defining path to img folder
+backend.use(express.static('img'));
+
 
 
 //Bring in models
@@ -59,6 +62,13 @@ backend.get('/signup/register', function(req, res){
 
 });
 
+//FrontEnd page route
+backend.get('/frontend', function(req, res){
+				res.render('frontend',{
+					title:'FrontEnd'
+	});
+});
+
 //for checking if users are registered in database or not route
 backend.get('/signup/lists', function(req, res){
 	dbvariable.find({}, function(err, users){
@@ -80,7 +90,7 @@ backend.post('/signup/register', function(req, res){
 	let x= new dbvariable();
 	x.name=req.body.name;
 	x.email=req.body.email;
-	x.contacts=req.body.contacts;
+	x.pwd=req.body.pwd;
 	console.log(req.body.name);
 
 	x.save(function(err){
